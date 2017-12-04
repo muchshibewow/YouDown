@@ -33,5 +33,4 @@ def URLList(PlaylistURL):
 	return LinkList
 
 if __name__ == '__main__':
-	# Boilerplate for TVF's Permanent Roommates Season 1.
-	print(URLList('https://www.youtube.com/watch?v=6LedYr5tQUs&list=PLTB0eCoUXErZYQ0Ljy5smGvDL4Ng134rV'))
+	print("Useless, unless you modify the code. Enjoy!)
