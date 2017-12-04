@@ -33,4 +33,4 @@ def URLList(PlaylistURL):
 	return LinkList
 
 if __name__ == '__main__':
-	print("Useless, unless you modify the code. Enjoy!)
+	print("Useless, unless you modify the code. Enjoy!")
