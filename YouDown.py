@@ -1,3 +1,4 @@
+#!/usr/bin/python3.6
 # The main YouDown program
 
 # Importing from other files in the repository.
