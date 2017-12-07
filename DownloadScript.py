@@ -1,9 +1,13 @@
 # File containing a function to download the videos
 
 import pytube
+from root_check import Check
 
 
 def Download(URL, Path):
+	if not Check(Path):
+		print("Permission to write denied.")
+		print("Please ensure you have write privileges to the directory specified.")
     # Making a YouTube object from the URL provided to the function.
     vid = pytube.YouTube(URL)
 
