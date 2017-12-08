@@ -1,4 +1,4 @@
-#!/usr/bin/python3.6
+#!/usr/bin/env python3
 # The main YouDown program
 
 # Importing from other files in the repository.
