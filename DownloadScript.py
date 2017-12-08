@@ -5,7 +5,7 @@ from root_check import Check
 
 
 def Download(URL, Path):
-	# Checking for write permission
+    # Checking for write permission
     if not Check(Path):
         print("Write access denied.")
         print("Ensure you have write privileges for the specified path")
@@ -13,7 +13,7 @@ def Download(URL, Path):
 
     # Making the YouTube object.
     vid = pytube.YouTube(URL)
-    
+
     # Taking only the highest quality 'legacy' stream for the video.
     # TODO : Add DASH streams support
     Video = vid.streams.first()
