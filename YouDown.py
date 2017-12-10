@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 # The main YouDown program
 
+# TODO : add ffplay commands to single-video option.
+# TODO : add DASH streams support, and stitching with ffmpeg
+
 # Importing from other files in the repository.
 from LinkGen import URLList
 from DownloadScript import Download
