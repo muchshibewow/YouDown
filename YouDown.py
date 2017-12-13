@@ -30,3 +30,6 @@ elif ans == 2:
         Download(Link, Path)
     print("\nPlaylist download complete!\n")
     print("\n\nThank you for using YouDown!\n\n")
+else:
+    print("There are only 2 options, mate. :3")
+    exit()
