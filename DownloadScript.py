@@ -2,6 +2,7 @@
 
 import pytube
 from root_check import Check
+from os import sep
 
 
 def Download(URL, Path):
@@ -22,4 +23,4 @@ def Download(URL, Path):
     print("\nDownloading", Video.default_filename, "in", Video.resolution + ".")
     Video.download(Path)
     print("Download complete!")
-    return Path+os.sep+Video.default_filename
+    return Path+sep+Video.default_filename
