@@ -11,4 +11,4 @@ def PLAY(Path):
     if os.name == 'nt':  # Windows
         os.startfile(Path)
     elif os.name == 'posix':  # Linux
-        run('vlc ' + Path, shell=True)
+        run('vlc ' + Path, shell=True) # Totally unrelated, listen to Run - AWOLNATION.
