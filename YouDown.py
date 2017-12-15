@@ -21,6 +21,7 @@ if ans == 1:
     print("\nWould you like to play the video now? (y/n)")
     pl = input()
     if pl=='y' or pl=='Y':
+        print("Playing")
         PLAY(Video)
     print("\n\nThank you for using YouDown!\n\n")
 elif ans == 2:

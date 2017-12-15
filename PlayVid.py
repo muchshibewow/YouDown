@@ -7,7 +7,7 @@ import os
 
 def PLAY(Path):
 	# Determining the OS first.
-	if os.name=='nt':
+	if os.name=='nt': # Windows
 		os.startfile(Path)
-	elif os.name=='posix':
+	elif os.name=='posix': # Linux
 		run('vlc '+Path,shell=True)
