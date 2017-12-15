@@ -17,7 +17,7 @@ if ans == 1:
     # Downloading a single video only.
     URL = input("Enter the URL of the video : ")
     Path = input("Where do you want to save this file? : ")
-    Download(URL, Path)
+    Video = Download(URL, Path)
     print("\nWould you like to play the video now? (y/n)")
     pl = input()
     if pl=='y' or pl=='Y':
