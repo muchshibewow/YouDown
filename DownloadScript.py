@@ -19,6 +19,6 @@ def Download(URL, Path):
     Video = vid.streams.first()
 
     # Just the random UI.
-    print("\nDownloading", Video.default_filename, "in", Video.resolution, "......")
+    print("\nDownloading", Video.default_filename, "in", Video.resolution + "..")
     Video.download(Path)
     print("Download complete!")
