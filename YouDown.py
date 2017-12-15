@@ -7,6 +7,7 @@
 # Importing from other files in the repository.
 from LinkGen import URLList
 from DownloadScript import Download
+from PlayVid import PLAY
 
 # Main UI
 print("Welcome to YouDown!")
@@ -17,6 +18,10 @@ if ans == 1:
     URL = input("Enter the URL of the video : ")
     Path = input("Where do you want to save this file? : ")
     Download(URL, Path)
+    print("\nWould you like to play the video now? (y/n)")
+    pl = input()
+    if pl=='y' or pl=='Y':
+        PLAY(Video)
     print("\n\nThank you for using YouDown!\n\n")
 elif ans == 2:
     # Downloading an entire playlist
