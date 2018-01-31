@@ -20,7 +20,8 @@ def URLList(PlaylistURL):
     # from the tags needed.
     # P.S I don't know anything about the "lxml" tag here.
     PageSrc = requests.get(PlaylistURL_actual).text
-    soupObj = BeautifulSoup(PageSrc, "lxml")
+    print("\n\nIgnore the following warning.\n")
+    soupObj = BeautifulSoup(PageSrc)
 
     # These lines then go through the <a> tags in the page,
     # looking for valid video tags.
