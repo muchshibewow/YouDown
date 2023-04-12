@@ -7,33 +7,34 @@
 from LinkGen import URLList
 from DownloadScript import Download
 from PlayVid import PLAY
+from rich.console import Console
+console = Console()
 
 # Main UI
-print("Welcome to YouDown!")
-print("What would you like to download?")
-ans = int(input('1. Video\n2. Playlist\n:'))
+console.print("Welcome to [bright_red]You[/][bold]Down!")
+console.print("What would you like to [bright_green][bold]download?")
+ans = int(console.input('[bold][italic]1. Video\n2. Playlist\n:'))
 
-# Choices, choices..
+# Choices, choices.. (we all know.)
 if ans == 1:
     # Downloading a single video only.
 
-    URL = input("Enter the URL of the video : ")
+    URL = console.input("[bright_yellow][bold]Enter the URL of the video : ")
     Path = input("Where do you want to save this file? : ")
     Video = Download(URL, Path)
 
     # Video playback post-download.
-    print("\nWould you like to play the video now? (y/n)")
-    pl = input()
+    pl = console.input("\n[bright_yellow][bold]Would you like to play the video now? (y/n) ")
     if pl == 'y' or pl == 'Y':
         print("Playing")
         PLAY(Video)
-    print("\n\nThank you for using YouDown!\n\n")
+    console.print("\n\n[bright_green]Thank you for using [/][bright_red]You[/][bold]Down!\n\n")
 
 
 elif ans == 2:
     # Downloading an entire playlist
 
-    URL = input("Enter the URL of the playlist : ")
+    URL = console.input("[bright_yellow][bold]Enter the URL of the playlist : ")
     Path = input("Where do you want to save these videos? : ")
     URLs = URLList(URL)
 
@@ -48,9 +49,9 @@ elif ans == 2:
     # The actual downloading process.
     for Link in URLs[1:]:  # Don't ask.
         Download(Link, Path)
-    print("\nPlaylist download complete!\n")
-    print("\n\nThank you for using YouDown!\n\n")
+    print("\n[bright_green]Playlist download complete!\n")
+    print("\n\n[bright_green]Thank you for using [/][bright_red]You[/][bold]Down!\n\n")
 
 else: # You drunk, m8?
-    print("There are only 2 options, mate. :3")
-    exit()
+    console.print("[bright_red]Error: There are only 2 options, mate. :3")
+    exit() # Theres no need for exit, since it autmatically ends.
