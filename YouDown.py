@@ -3,10 +3,17 @@
 
 # TODO : add DASH streams support, and stitching with ffmpeg
 
+import sys
+
 # Importing from other files in the repository.
 from LinkGen import URLList
 from DownloadScript import Download
 from PlayVid import PLAY
+
+
+# Checking for Python 3.0 or higher.
+if sys.version_info[0] < 3:
+    raise Exception("YouDown requires Python 3.0 or higher. Please upgrade your Python version.")
 
 # Main UI
 print("Welcome to YouDown!")
@@ -19,12 +26,14 @@ if ans == 1:
 
     URL = input("Enter the URL of the video : ")
     Path = input("Where do you want to save this file? : ")
+    if Path == "":  # If no path is specified, save in the current directory.
+        Path = "."
     Video = Download(URL, Path)
 
     # Video playback post-download.
     print("\nWould you like to play the video now? (y/n)")
     pl = input()
-    if pl == 'y' or pl == 'Y':
+    if pl.lower() == "y":
         print("Playing")
         PLAY(Video)
     print("\n\nThank you for using YouDown!\n\n")
@@ -35,18 +44,13 @@ elif ans == 2:
 
     URL = input("Enter the URL of the playlist : ")
     Path = input("Where do you want to save these videos? : ")
+    if Path == "": # If no path is specified, save in the current directory.
+        Path = "."
     URLs = URLList(URL)
-
-    # Some random lolz.
-    URLs.pop(2)
-    URLs.pop(3)
-    URLN = []
-    for i in range(0, len(URLs), 2):
-        URLN.append(URLs[i])
-    URLs = URLN
+    
 
     # The actual downloading process.
-    for Link in URLs[1:]:  # Don't ask.
+    for Link in URLs:
         Download(Link, Path)
     print("\nPlaylist download complete!\n")
     print("\n\nThank you for using YouDown!\n\n")
