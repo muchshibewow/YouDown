@@ -6,7 +6,7 @@ import re
 from urllib.parse import urlparse
 
 
-def URLList(PlaylistURL):
+def URLList(PlaylistURL: str) -> list[str]:
     # These lines get the original playlist url passed as argument and try to make
     # a proper playlist-only URL.
     
