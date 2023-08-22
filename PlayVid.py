@@ -5,7 +5,7 @@
 import os
 
 
-def PLAY(Path):
+def PLAY(Path: str) -> None:
     # Just one line to play the file.
     # Equivalent to double-clicking the file.
     os.startfile(Path)

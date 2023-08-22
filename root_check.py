@@ -3,7 +3,7 @@
 import os
 
 
-def Check(Path):
+def Check(Path: str) -> bool:
     if os.name == 'nt':  # For Windows users
         try:
             os.makedirs(Path + '\\Lolz')
